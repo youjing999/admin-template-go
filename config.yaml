@@ -1,0 +1,32 @@
+#项目启动端口
+server:
+  address: 2000
+  model: debug
+
+#db配置
+db:
+  dialects: mysql
+  host: localhost
+  port: 3316
+  db: admin-api
+  username: root
+  password: root
+  charset: utf8
+  maxIdle: 50
+  maxOpen: 150
+
+redis:
+  address: localhost:6379
+  #password:
+
+log:
+  path: ./log
+  name: sys
+  # 输出控制台
+  model: console
+
+# 图片地址和ip
+imageSettings:
+  uploadDir: /admin-template-go/upload
+  imageHost: http://localhost:2000
+
