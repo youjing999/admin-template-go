@@ -8,7 +8,7 @@ db:
   dialects: mysql
   host: localhost
   port: 3316
-  db: admin-api
+  db: admin-template-go
   username: root
   password: root
   charset: utf8

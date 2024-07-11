@@ -7,11 +7,11 @@ import (
 
 //总配置文件
 type config struct {
-	server        server        `yaml:"server"`
+	Server        server        `yaml:"server"`
 	Db            db            `yaml:"db"`
-	redis         redis         `yaml:"redis"`
-	log           log           `yaml:"log"`
-	imageSettings imageSettings `yaml:"imageSettings"`
+	Redis         redis         `yaml:"redis"`
+	Log           log           `yaml:"log"`
+	ImageSettings imageSettings `yaml:"imageSettings"`
 }
 
 // 项目端口配置
