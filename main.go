@@ -14,6 +14,12 @@ import (
 	"time"
 )
 
+// @title 后台管理系统
+// @version 1.0
+// @description 后台管理系统API接口文档
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name Authorization
 func main() {
 	// 加载日志
 	log := log.Log()
