@@ -12,7 +12,7 @@ var ctx = context.Background()
 
 type RedisStore struct{}
 
-// 存验证码
+// Set 存验证码
 func (r RedisStore) Set(id string, value string) {
 	key := constant.LOGIN_CODE + id
 	err := redis.RedisDb.Set(ctx, key, value, time.Minute*5).Err()
@@ -21,7 +21,7 @@ func (r RedisStore) Set(id string, value string) {
 	}
 }
 
-// 获取验证码
+// Get 获取验证码
 func (r RedisStore) Get(id string, clear bool) string {
 	key := constant.LOGIN_CODE + id
 	val, err := redis.RedisDb.Get(ctx, key).Result()
@@ -31,7 +31,7 @@ func (r RedisStore) Get(id string, clear bool) string {
 	return val
 }
 
-// 检验验证码
+// Verify 检验验证码
 func (r RedisStore) Verify(id, answer string, clear bool) bool {
 	v := RedisStore{}.Get(id, clear)
 	return v == answer

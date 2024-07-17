@@ -26,4 +26,5 @@ func InitRouter() *gin.Engine {
 func register(router *gin.Engine) {
 	router.GET("/api/captcha", controller.Captcha)
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	router.POST("/api/login", controller.Login)
 }
