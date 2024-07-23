@@ -27,4 +27,17 @@ func register(router *gin.Engine) {
 	router.GET("/api/captcha", controller.Captcha)
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	router.POST("/api/login", controller.Login)
+
+	jwt := router.Group("/api", middleware.AuthMiddleware())
+	{
+		jwt.POST("/post/add", controller.CreateSysPost)
+		jwt.GET("/post/list", controller.GetSysPostList)
+		jwt.GET("/post/info", controller.GetSysPostById)
+		jwt.PUT("/post/update", controller.UpdateSysPost)
+		jwt.DELETE("/post/delete", controller.DeleteSysPostById)
+		jwt.DELETE("/post/batch/delete", controller.BatchDeleteSysPost)
+		jwt.PUT("/post/updateStatus", controller.UpdateSysPostStatus)
+		jwt.GET("/post/vo/list", controller.QuerySysPostVoList)
+	}
+
 }
