@@ -38,6 +38,12 @@ func register(router *gin.Engine) {
 		jwt.DELETE("/post/batch/delete", controller.BatchDeleteSysPost)
 		jwt.PUT("/post/updateStatus", controller.UpdateSysPostStatus)
 		jwt.GET("/post/vo/list", controller.QuerySysPostVoList)
+		jwt.GET("/dept/list", controller.GetSysDeptList)
+		jwt.POST("/dept/add", controller.CreateSysDept)
+		jwt.GET("/dept/info", controller.GetSysDeptById)
+		jwt.PUT("/dept/update", controller.UpdateSysDept)
+		jwt.DELETE("/dept/delete", controller.DeleteSysDeptById)
+		jwt.GET("/dept/vo/list", controller.QuerySysDeptVoList)
 	}
 
 }
